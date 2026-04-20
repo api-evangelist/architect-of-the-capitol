@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-schema/aoc-data-api-preservation-project-schema.json",
+  "example": {
+    "id": "example-string",
+    "name": "example-string",
+    "buildingId": "example-string",
+    "buildingName": "example-string",
+    "status": "planned",
+    "startDate": "example-string",
+    "estimatedCompletion": "example-string",
+    "actualCompletion": "example-string",
+    "budget": 1000000.0,
+    "description": "example-string",
+    "contractor": "example-string",
+    "historicalContext": "example-string"
+  }
+}

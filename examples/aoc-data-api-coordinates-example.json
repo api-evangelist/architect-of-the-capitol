@@ -1,0 +1,7 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-schema/aoc-data-api-coordinates-schema.json",
+  "example": {
+    "latitude": 1000000.0,
+    "longitude": 1000000.0
+  }
+}

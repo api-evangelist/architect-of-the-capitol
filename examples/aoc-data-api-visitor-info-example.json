@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-schema/aoc-data-api-visitor-info-schema.json",
+  "example": {
+    "capitalTours": {
+      "hours": "example-string",
+      "reservationRequired": true,
+      "reservationUrl": "example-string",
+      "phone": "example-string"
+    },
+    "visitorCenter": {
+      "hours": "example-string",
+      "address": "example-string",
+      "phone": "example-string"
+    },
+    "grounds": {
+      "openDawn": true,
+      "closeDusk": true,
+      "description": "example-string"
+    }
+  }
+}

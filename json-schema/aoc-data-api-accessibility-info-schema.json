@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-schema/aoc-data-api-accessibility-info-schema.json",
+  "title": "AccessibilityInfo",
+  "type": "object",
+  "properties": {
+    "buildingId": {
+      "type": "string"
+    },
+    "buildingName": {
+      "type": "string"
+    },
+    "wheelchairAccess": {
+      "type": "boolean"
+    },
+    "accessibleEntrances": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "elevators": {
+      "type": "boolean"
+    },
+    "accessibleRestrooms": {
+      "type": "boolean"
+    },
+    "assistiveListeningDevices": {
+      "type": "boolean"
+    },
+    "signLanguageInterpretation": {
+      "type": "string"
+    },
+    "accessibilityContactPhone": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

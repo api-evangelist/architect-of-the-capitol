@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-structure/aoc-data-api-artwork-structure.json",
+  "title": "Artwork",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "artist": {
+      "type": "string"
+    },
+    "yearCreated": {
+      "type": "string"
+    },
+    "medium": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "buildingId": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "acquisitionDate": {
+      "type": "string"
+    },
+    "historicalSignificance": {
+      "type": "string"
+    }
+  }
+}

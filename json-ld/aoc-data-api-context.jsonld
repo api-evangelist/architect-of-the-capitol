@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aoc": "https://www.aoc.gov/vocab#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Building": "aoc:Building",
+    "BuildingList": "aoc:BuildingList",
+    "Coordinates": "aoc:Coordinates",
+    "Artwork": "aoc:Artwork",
+    "ArtworkList": "aoc:ArtworkList",
+    "PreservationProject": "aoc:PreservationProject",
+    "PreservationProjectList": "aoc:PreservationProjectList",
+    "VisitorInfo": "aoc:VisitorInfo",
+    "AccessibilityInfo": "aoc:AccessibilityInfo"
+  }
+}

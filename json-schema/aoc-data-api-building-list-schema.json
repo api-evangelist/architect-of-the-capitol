@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-schema/aoc-data-api-building-list-schema.json",
+  "title": "BuildingList",
+  "type": "object",
+  "properties": {
+    "total": {
+      "type": "integer"
+    },
+    "offset": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "buildings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {},
+          "name": {},
+          "type": {},
+          "yearBuilt": {},
+          "architect": {},
+          "description": {},
+          "address": {},
+          "squareFootage": {},
+          "floors": {},
+          "historicDesignation": {},
+          "visitingHours": {},
+          "coordinates": {}
+        }
+      }
+    }
+  }
+}

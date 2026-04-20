@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-schema/aoc-data-api-building-schema.json",
+  "example": {
+    "id": "example-string",
+    "name": "example-string",
+    "type": "example-string",
+    "yearBuilt": 42,
+    "architect": "example-string",
+    "description": "example-string",
+    "address": "example-string",
+    "squareFootage": 42,
+    "floors": 42,
+    "historicDesignation": "example-string",
+    "visitingHours": "example-string",
+    "coordinates": {
+      "latitude": 1000000.0,
+      "longitude": 1000000.0
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-structure/aoc-data-api-preservation-project-structure.json",
+  "title": "PreservationProject",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "buildingId": {
+      "type": "string"
+    },
+    "buildingName": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "active",
+        "completed"
+      ]
+    },
+    "startDate": {
+      "type": "string"
+    },
+    "estimatedCompletion": {
+      "type": "string"
+    },
+    "actualCompletion": {
+      "type": "string"
+    },
+    "budget": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "contractor": {
+      "type": "string"
+    },
+    "historicalContext": {
+      "type": "string"
+    }
+  }
+}
