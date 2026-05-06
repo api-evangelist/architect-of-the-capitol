@@ -1,0 +1,425 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Architect of the Capitol Data API
+  description: API providing access to public information about Capitol campus buildings, art collections, historic preservation
+    projects, and congressional facilities.
+  tags:
+  - Architect
+  - Of
+  - The
+  - Capitol
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: architect-of-the-capitol
+    baseUri: https://api.aoc.gov/v1
+    description: Architect of the Capitol Data API HTTP API.
+    resources:
+    - name: buildings
+      path: /buildings
+      operations:
+      - name: listbuildings
+        method: GET
+        description: List Capitol campus buildings
+        inputParameters:
+        - name: type
+          in: query
+          type: string
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: buildings-buildingid
+      path: /buildings/{buildingId}
+      operations:
+      - name: getbuilding
+        method: GET
+        description: Get building details
+        inputParameters:
+        - name: buildingId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: artworks
+      path: /artworks
+      operations:
+      - name: listartworks
+        method: GET
+        description: List Capitol art collection
+        inputParameters:
+        - name: medium
+          in: query
+          type: string
+        - name: artist
+          in: query
+          type: string
+        - name: location
+          in: query
+          type: string
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: artworks-artworkid
+      path: /artworks/{artworkId}
+      operations:
+      - name: getartwork
+        method: GET
+        description: Get artwork details
+        inputParameters:
+        - name: artworkId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: preservation-projects
+      path: /preservation-projects
+      operations:
+      - name: listpreservationprojects
+        method: GET
+        description: List historic preservation projects
+        inputParameters:
+        - name: status
+          in: query
+          type: string
+        - name: buildingId
+          in: query
+          type: string
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: preservation-projects-projectid
+      path: /preservation-projects/{projectId}
+      operations:
+      - name: getpreservationproject
+        method: GET
+        description: Get preservation project details
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: visitor-info
+      path: /visitor-info
+      operations:
+      - name: getvisitorinfo
+        method: GET
+        description: Get visitor information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accessibility
+      path: /accessibility
+      operations:
+      - name: getaccessibilityinfo
+        method: GET
+        description: Get accessibility information
+        inputParameters:
+        - name: buildingId
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: architect-of-the-capitol-rest
+    description: REST adapter for Architect of the Capitol Data API.
+    resources:
+    - path: /buildings
+      name: listbuildings
+      operations:
+      - method: GET
+        name: listbuildings
+        description: List Capitol campus buildings
+        call: architect-of-the-capitol.listbuildings
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /buildings/{buildingId}
+      name: getbuilding
+      operations:
+      - method: GET
+        name: getbuilding
+        description: Get building details
+        call: architect-of-the-capitol.getbuilding
+        with:
+          buildingId: rest.buildingId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /artworks
+      name: listartworks
+      operations:
+      - method: GET
+        name: listartworks
+        description: List Capitol art collection
+        call: architect-of-the-capitol.listartworks
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /artworks/{artworkId}
+      name: getartwork
+      operations:
+      - method: GET
+        name: getartwork
+        description: Get artwork details
+        call: architect-of-the-capitol.getartwork
+        with:
+          artworkId: rest.artworkId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /preservation-projects
+      name: listpreservationprojects
+      operations:
+      - method: GET
+        name: listpreservationprojects
+        description: List historic preservation projects
+        call: architect-of-the-capitol.listpreservationprojects
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /preservation-projects/{projectId}
+      name: getpreservationproject
+      operations:
+      - method: GET
+        name: getpreservationproject
+        description: Get preservation project details
+        call: architect-of-the-capitol.getpreservationproject
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /visitor-info
+      name: getvisitorinfo
+      operations:
+      - method: GET
+        name: getvisitorinfo
+        description: Get visitor information
+        call: architect-of-the-capitol.getvisitorinfo
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accessibility
+      name: getaccessibilityinfo
+      operations:
+      - method: GET
+        name: getaccessibilityinfo
+        description: Get accessibility information
+        call: architect-of-the-capitol.getaccessibilityinfo
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: architect-of-the-capitol-mcp
+    transport: http
+    description: MCP adapter for Architect of the Capitol Data API for AI agent use.
+    tools:
+    - name: listbuildings
+      description: List Capitol campus buildings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architect-of-the-capitol.listbuildings
+      with:
+        type: tools.type
+        limit: tools.limit
+        offset: tools.offset
+      inputParameters:
+      - name: type
+        type: string
+        description: type
+      - name: limit
+        type: integer
+        description: limit
+      - name: offset
+        type: integer
+        description: offset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getbuilding
+      description: Get building details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architect-of-the-capitol.getbuilding
+      with:
+        buildingId: tools.buildingId
+      inputParameters:
+      - name: buildingId
+        type: string
+        description: buildingId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listartworks
+      description: List Capitol art collection
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architect-of-the-capitol.listartworks
+      with:
+        medium: tools.medium
+        artist: tools.artist
+        location: tools.location
+        limit: tools.limit
+        offset: tools.offset
+      inputParameters:
+      - name: medium
+        type: string
+        description: medium
+      - name: artist
+        type: string
+        description: artist
+      - name: location
+        type: string
+        description: location
+      - name: limit
+        type: integer
+        description: limit
+      - name: offset
+        type: integer
+        description: offset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getartwork
+      description: Get artwork details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architect-of-the-capitol.getartwork
+      with:
+        artworkId: tools.artworkId
+      inputParameters:
+      - name: artworkId
+        type: string
+        description: artworkId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listpreservationprojects
+      description: List historic preservation projects
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architect-of-the-capitol.listpreservationprojects
+      with:
+        status: tools.status
+        buildingId: tools.buildingId
+        limit: tools.limit
+        offset: tools.offset
+      inputParameters:
+      - name: status
+        type: string
+        description: status
+      - name: buildingId
+        type: string
+        description: buildingId
+      - name: limit
+        type: integer
+        description: limit
+      - name: offset
+        type: integer
+        description: offset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpreservationproject
+      description: Get preservation project details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architect-of-the-capitol.getpreservationproject
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getvisitorinfo
+      description: Get visitor information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architect-of-the-capitol.getvisitorinfo
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getaccessibilityinfo
+      description: Get accessibility information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architect-of-the-capitol.getaccessibilityinfo
+      with:
+        buildingId: tools.buildingId
+      inputParameters:
+      - name: buildingId
+        type: string
+        description: buildingId
+      outputParameters:
+      - type: object
+        mapping: $.
