@@ -33,6 +33,8 @@ apis:
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/openapi/aoc-data-api.yaml
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/architect-of-the-capitol
 - type: Portal
   url: https://www.aoc.gov/
 - type: Documentation

@@ -1,0 +1,75 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Architect of the Capitol Data API — Accessibility
+  description: 'Architect of the Capitol Data API — Accessibility. 1 operations. Lead operation: Get accessibility information.
+    Self-contained Naftiko capability covering one Architect Of The Capitol business surface.'
+  tags:
+  - Architect Of The Capitol
+  - Accessibility
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARCHITECT_OF_THE_CAPITOL_API_KEY: ARCHITECT_OF_THE_CAPITOL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: aoc-data-accessibility
+    baseUri: https://api.aoc.gov/v1
+    description: Architect of the Capitol Data API — Accessibility business capability. Self-contained, no shared references.
+    resources:
+    - name: accessibility
+      path: /accessibility
+      operations:
+      - name: getaccessibilityinfo
+        method: GET
+        description: Get accessibility information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: buildingId
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: aoc-data-accessibility-rest
+    port: 8080
+    description: REST adapter for Architect of the Capitol Data API — Accessibility. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/accessibility
+      name: accessibility
+      description: REST surface for accessibility.
+      operations:
+      - method: GET
+        name: getaccessibilityinfo
+        description: Get accessibility information
+        call: aoc-data-accessibility.getaccessibilityinfo
+        with:
+          buildingId: rest.buildingId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: aoc-data-accessibility-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Architect of the Capitol Data API — Accessibility. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: get-accessibility-information
+      description: Get accessibility information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aoc-data-accessibility.getaccessibilityinfo
+      with:
+        buildingId: tools.buildingId
+      outputParameters:
+      - type: object
+        mapping: $.

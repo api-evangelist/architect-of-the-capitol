@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Architect of the Capitol Data API — Visitor Information
+  description: 'Architect of the Capitol Data API — Visitor Information. 1 operations. Lead operation: Get visitor information.
+    Self-contained Naftiko capability covering one Architect Of The Capitol business surface.'
+  tags:
+  - Architect Of The Capitol
+  - Visitor Information
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARCHITECT_OF_THE_CAPITOL_API_KEY: ARCHITECT_OF_THE_CAPITOL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: aoc-data-visitor-information
+    baseUri: https://api.aoc.gov/v1
+    description: Architect of the Capitol Data API — Visitor Information business capability. Self-contained, no shared references.
+    resources:
+    - name: visitor-info
+      path: /visitor-info
+      operations:
+      - name: getvisitorinfo
+        method: GET
+        description: Get visitor information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: aoc-data-visitor-information-rest
+    port: 8080
+    description: REST adapter for Architect of the Capitol Data API — Visitor Information. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/visitor-info
+      name: visitor-info
+      description: REST surface for visitor-info.
+      operations:
+      - method: GET
+        name: getvisitorinfo
+        description: Get visitor information
+        call: aoc-data-visitor-information.getvisitorinfo
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: aoc-data-visitor-information-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Architect of the Capitol Data API — Visitor Information. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: get-visitor-information
+      description: Get visitor information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aoc-data-visitor-information.getvisitorinfo
+      outputParameters:
+      - type: object
+        mapping: $.
