@@ -33,6 +33,8 @@ apis:
     - type: OpenAPI
       url: https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/openapi/aoc-data-api.yaml
 common:
+  - type: DomainSecurity
+    url: security/architect-of-the-capitol-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/architect-of-the-capitol
   - type: Portal
@@ -67,6 +69,8 @@ common:
       description: Track preservation project status and outcomes for historic Capitol structures.
     - name: Congressional Services
       description: Support congressional staff with facilities management and space planning information.
+  - type: Blog
+    url: https://www.aoc.gov/explore-capitol-campus/blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
