@@ -1,0 +1,21 @@
+{
+  "repo": "architect-of-the-capitol",
+  "feeds": [
+    {
+      "source": "https://www.aoc.gov/explore-capitol-campus/blog",
+      "feed_url": "https://www.aoc.gov/explore-capitol-campus/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-ld/aoc-data-api-context.jsonld",
+      "feed_url": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-ld/aoc-data-api-context.jsonld",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 4
+}

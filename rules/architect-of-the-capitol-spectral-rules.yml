@@ -1,0 +1,82 @@
+# architect-of-the-capitol — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 1/1 servers on aoc.gov
+#   - path-params-casing: camel @ 100% (n=3)
+#   - query-params-casing: snake @ 85% (n=13)
+#   - operationid-casing: camel @ 100% (n=8)
+#   - schema-names-casing: pascal @ 100% (n=9)
+#   - schema-properties-casing: snake @ 60% (n=63)
+#   - pagination params observed: ['limit', 'offset']
+extends:
+  - spectral:oas
+rules:
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  servers-expected-domain:
+    description: Server URLs should be on the aoc.gov domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: aoc\.gov
+  path-params-casing:
+    description: Path parameters should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  query-params-casing:
+    description: Query parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: snake
+  operationid-casing:
+    description: Operation IDs should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: info
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
+      function: truthy
