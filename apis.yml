@@ -33,6 +33,8 @@ apis:
     - type: OpenAPI
       url: https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/openapi/aoc-data-api.yaml
 common:
+  - type: AgenticAccess
+    url: agentic-access/architect-of-the-capitol-agentic-access.yml
   - type: DomainSecurity
     url: security/architect-of-the-capitol-domain-security.yml
   - type: LinkedIn
