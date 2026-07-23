@@ -1,0 +1,115 @@
+openapi: 3.0.3
+info:
+  title: Architect of the Capitol Data Accessibility Preservation API
+  description: API providing access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities.
+  version: 1.0.0
+  contact:
+    name: Architect of the Capitol
+    url: https://www.aoc.gov/
+servers:
+- url: https://api.aoc.gov/v1
+  description: Production
+tags:
+- name: Preservation
+paths:
+  /preservation-projects:
+    get:
+      summary: List historic preservation projects
+      operationId: listPreservationProjects
+      tags:
+      - Preservation
+      parameters:
+      - name: status
+        in: query
+        schema:
+          type: string
+          enum:
+          - planned
+          - active
+          - completed
+      - name: buildingId
+        in: query
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 20
+      - name: offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+      responses:
+        '200':
+          description: List of preservation projects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreservationProjectList'
+  /preservation-projects/{projectId}:
+    get:
+      summary: Get preservation project details
+      operationId: getPreservationProject
+      tags:
+      - Preservation
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Preservation project details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreservationProject'
+components:
+  schemas:
+    PreservationProjectList:
+      type: object
+      properties:
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreservationProject'
+    PreservationProject:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        buildingId:
+          type: string
+        buildingName:
+          type: string
+        status:
+          type: string
+          enum:
+          - planned
+          - active
+          - completed
+        startDate:
+          type: string
+        estimatedCompletion:
+          type: string
+        actualCompletion:
+          type: string
+        budget:
+          type: number
+        description:
+          type: string
+        contractor:
+          type: string
+        historicalContext:
+          type: string

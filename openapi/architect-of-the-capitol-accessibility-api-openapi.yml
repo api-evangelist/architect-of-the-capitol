@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: Architect of the Capitol Data Accessibility API
+  description: API providing access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities.
+  version: 1.0.0
+  contact:
+    name: Architect of the Capitol
+    url: https://www.aoc.gov/
+servers:
+- url: https://api.aoc.gov/v1
+  description: Production
+tags:
+- name: Accessibility
+paths:
+  /accessibility:
+    get:
+      summary: Get accessibility information
+      operationId: getAccessibilityInfo
+      tags:
+      - Accessibility
+      parameters:
+      - name: buildingId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Accessibility features for Capitol campus
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessibilityInfo'
+components:
+  schemas:
+    AccessibilityInfo:
+      type: object
+      properties:
+        buildingId:
+          type: string
+        buildingName:
+          type: string
+        wheelchairAccess:
+          type: boolean
+        accessibleEntrances:
+          type: array
+          items:
+            type: string
+        elevators:
+          type: boolean
+        accessibleRestrooms:
+          type: boolean
+        assistiveListeningDevices:
+          type: boolean
+        signLanguageInterpretation:
+          type: string
+        accessibilityContactPhone:
+          type: string
+        notes:
+          type: string

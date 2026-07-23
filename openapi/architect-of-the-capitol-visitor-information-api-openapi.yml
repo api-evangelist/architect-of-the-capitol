@@ -1,0 +1,61 @@
+openapi: 3.0.3
+info:
+  title: Architect of the Capitol Data Accessibility Visitor Information API
+  description: API providing access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities.
+  version: 1.0.0
+  contact:
+    name: Architect of the Capitol
+    url: https://www.aoc.gov/
+servers:
+- url: https://api.aoc.gov/v1
+  description: Production
+tags:
+- name: Visitor Information
+paths:
+  /visitor-info:
+    get:
+      summary: Get visitor information
+      operationId: getVisitorInfo
+      tags:
+      - Visitor Information
+      responses:
+        '200':
+          description: Visitor information and hours
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VisitorInfo'
+components:
+  schemas:
+    VisitorInfo:
+      type: object
+      properties:
+        capitalTours:
+          type: object
+          properties:
+            hours:
+              type: string
+            reservationRequired:
+              type: boolean
+            reservationUrl:
+              type: string
+            phone:
+              type: string
+        visitorCenter:
+          type: object
+          properties:
+            hours:
+              type: string
+            address:
+              type: string
+            phone:
+              type: string
+        grounds:
+          type: object
+          properties:
+            openDawn:
+              type: boolean
+            closeDusk:
+              type: boolean
+            description:
+              type: string
