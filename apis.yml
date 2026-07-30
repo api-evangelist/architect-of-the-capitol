@@ -3,7 +3,19 @@ name: Architect of the Capitol
 description: The Architect of the Capitol (AOC) serves Congress and the Supreme Court as builder and steward of Capitol Hill's landmark buildings and grounds, preserving historic structures, 
   monuments, art, and gardens across the Capitol campus.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/architect-of-the-capitol.png
 tags:
   - Federal Government
   - Capitol Hill
@@ -15,23 +27,73 @@ created: '2024-11-21'
 modified: '2026-04-19'
 specificationVersion: '0.19'
 apis:
-  - aid: architect-of-the-capitol:aoc-data-api
-    name: Architect of the Capitol Data API
-    description: The AOC Data API provides access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities management.
-    humanURL: https://www.aoc.gov/
-    tags:
-    - Capitol Campus
-    - Buildings
-    - Art Collections
-    - Historic Preservation
-    - Facilities
-    properties:
-    - type: Documentation
-      url: https://www.aoc.gov/
-    - type: GettingStarted
-      url: https://www.aoc.gov/about-us
-    - type: OpenAPI
-      url: https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/openapi/aoc-data-api.yaml
+- aid: architect-of-the-capitol:architect-of-the-capitol-accessibility-api
+  name: Architect of the Capitol Accessibility API
+  description: The Accessibility API from Architect of the Capitol — 1 operation(s) for accessibility.
+  humanURL: https://www.aoc.gov/
+  tags:
+  - Accessibility
+  properties:
+  - type: OpenAPI
+    url: openapi/architect-of-the-capitol-accessibility-api-openapi.yml
+  - type: Documentation
+    url: https://www.aoc.gov/
+  - type: GettingStarted
+    url: https://www.aoc.gov/about-us
+- aid: architect-of-the-capitol:architect-of-the-capitol-art-collection-api
+  name: Architect of the Capitol Art Collection API
+  description: >-
+    The Art Collection API from Architect of the Capitol — 2 operation(s) for art collection.
+  humanURL: https://www.aoc.gov/
+  tags:
+  - Art Collection
+  properties:
+  - type: OpenAPI
+    url: openapi/architect-of-the-capitol-art-collection-api-openapi.yml
+  - type: Documentation
+    url: https://www.aoc.gov/
+  - type: GettingStarted
+    url: https://www.aoc.gov/about-us
+- aid: architect-of-the-capitol:architect-of-the-capitol-buildings-api
+  name: Architect of the Capitol Buildings API
+  description: The Buildings API from Architect of the Capitol — 2 operation(s) for buildings.
+  humanURL: https://www.aoc.gov/
+  tags:
+  - Buildings
+  properties:
+  - type: OpenAPI
+    url: openapi/architect-of-the-capitol-buildings-api-openapi.yml
+  - type: Documentation
+    url: https://www.aoc.gov/
+  - type: GettingStarted
+    url: https://www.aoc.gov/about-us
+- aid: architect-of-the-capitol:architect-of-the-capitol-preservation-api
+  name: Architect of the Capitol Preservation API
+  description: The Preservation API from Architect of the Capitol — 2 operation(s) for preservation.
+  humanURL: https://www.aoc.gov/
+  tags:
+  - Preservation
+  properties:
+  - type: OpenAPI
+    url: openapi/architect-of-the-capitol-preservation-api-openapi.yml
+  - type: Documentation
+    url: https://www.aoc.gov/
+  - type: GettingStarted
+    url: https://www.aoc.gov/about-us
+- aid: architect-of-the-capitol:architect-of-the-capitol-visitor-information-api
+  name: Architect of the Capitol Visitor Information API
+  description: >-
+    The Visitor Information API from Architect of the Capitol — 1 operation(s) for visitor information.
+  humanURL: https://www.aoc.gov/
+  tags:
+  - Visitor Information
+  properties:
+  - type: OpenAPI
+    url: openapi/architect-of-the-capitol-visitor-information-api-openapi.yml
+  - type: Documentation
+    url: https://www.aoc.gov/
+  - type: GettingStarted
+    url: https://www.aoc.gov/about-us
 common:
   - type: AgenticAccess
     url: agentic-access/architect-of-the-capitol-agentic-access.yml
