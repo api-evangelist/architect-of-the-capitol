@@ -1,0 +1,22 @@
+{
+  "provider": "architect-of-the-capitol",
+  "sources": [
+    "architect-of-the-capitol-accessibility-api-openapi.yml",
+    "architect-of-the-capitol-art-collection-api-openapi.yml",
+    "architect-of-the-capitol-buildings-api-openapi.yml",
+    "architect-of-the-capitol-preservation-api-openapi.yml",
+    "architect-of-the-capitol-visitor-information-api-openapi.yml"
+  ],
+  "outputs": [
+    "architect-of-the-capitol-accessibility-api-openapi.yml",
+    "architect-of-the-capitol-art-collection-api-openapi.yml",
+    "architect-of-the-capitol-buildings-api-openapi.yml",
+    "architect-of-the-capitol-preservation-api-openapi.yml",
+    "architect-of-the-capitol-visitor-information-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

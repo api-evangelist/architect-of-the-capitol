@@ -1,0 +1,381 @@
+openapi: 3.0.3
+info:
+  title: Architect of the Capitol Data API
+  description: API providing access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities.
+  version: 1.0.0
+  contact:
+    name: Architect of the Capitol
+    url: https://www.aoc.gov/
+servers:
+  - url: https://api.aoc.gov/v1
+    description: Production
+paths:
+  /buildings:
+    get:
+      summary: List Capitol campus buildings
+      operationId: listBuildings
+      tags: [Buildings]
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [capitol, house-office, senate-office, library-of-congress, supreme-court, other]
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: List of buildings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BuildingList'
+  /buildings/{buildingId}:
+    get:
+      summary: Get building details
+      operationId: getBuilding
+      tags: [Buildings]
+      parameters:
+        - name: buildingId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Building details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Building'
+        '404':
+          description: Building not found
+  /artworks:
+    get:
+      summary: List Capitol art collection
+      operationId: listArtworks
+      tags: [Art Collection]
+      parameters:
+        - name: medium
+          in: query
+          schema:
+            type: string
+        - name: artist
+          in: query
+          schema:
+            type: string
+        - name: location
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: List of artworks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArtworkList'
+  /artworks/{artworkId}:
+    get:
+      summary: Get artwork details
+      operationId: getArtwork
+      tags: [Art Collection]
+      parameters:
+        - name: artworkId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Artwork details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artwork'
+        '404':
+          description: Artwork not found
+  /preservation-projects:
+    get:
+      summary: List historic preservation projects
+      operationId: listPreservationProjects
+      tags: [Preservation]
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [planned, active, completed]
+        - name: buildingId
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: List of preservation projects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreservationProjectList'
+  /preservation-projects/{projectId}:
+    get:
+      summary: Get preservation project details
+      operationId: getPreservationProject
+      tags: [Preservation]
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Preservation project details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreservationProject'
+  /visitor-info:
+    get:
+      summary: Get visitor information
+      operationId: getVisitorInfo
+      tags: [Visitor Information]
+      responses:
+        '200':
+          description: Visitor information and hours
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VisitorInfo'
+  /accessibility:
+    get:
+      summary: Get accessibility information
+      operationId: getAccessibilityInfo
+      tags: [Accessibility]
+      parameters:
+        - name: buildingId
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Accessibility features for Capitol campus
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessibilityInfo'
+components:
+  schemas:
+    Building:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        yearBuilt:
+          type: integer
+        architect:
+          type: string
+        description:
+          type: string
+        address:
+          type: string
+        squareFootage:
+          type: integer
+        floors:
+          type: integer
+        historicDesignation:
+          type: string
+        visitingHours:
+          type: string
+        coordinates:
+          $ref: '#/components/schemas/Coordinates'
+    BuildingList:
+      type: object
+      properties:
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        buildings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Building'
+    Coordinates:
+      type: object
+      properties:
+        latitude:
+          type: number
+        longitude:
+          type: number
+    Artwork:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        artist:
+          type: string
+        yearCreated:
+          type: string
+        medium:
+          type: string
+        dimensions:
+          type: string
+        location:
+          type: string
+        buildingId:
+          type: string
+        description:
+          type: string
+        imageUrl:
+          type: string
+        acquisitionDate:
+          type: string
+        historicalSignificance:
+          type: string
+    ArtworkList:
+      type: object
+      properties:
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        artworks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Artwork'
+    PreservationProject:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        buildingId:
+          type: string
+        buildingName:
+          type: string
+        status:
+          type: string
+          enum: [planned, active, completed]
+        startDate:
+          type: string
+        estimatedCompletion:
+          type: string
+        actualCompletion:
+          type: string
+        budget:
+          type: number
+        description:
+          type: string
+        contractor:
+          type: string
+        historicalContext:
+          type: string
+    PreservationProjectList:
+      type: object
+      properties:
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreservationProject'
+    VisitorInfo:
+      type: object
+      properties:
+        capitalTours:
+          type: object
+          properties:
+            hours:
+              type: string
+            reservationRequired:
+              type: boolean
+            reservationUrl:
+              type: string
+            phone:
+              type: string
+        visitorCenter:
+          type: object
+          properties:
+            hours:
+              type: string
+            address:
+              type: string
+            phone:
+              type: string
+        grounds:
+          type: object
+          properties:
+            openDawn:
+              type: boolean
+            closeDusk:
+              type: boolean
+            description:
+              type: string
+    AccessibilityInfo:
+      type: object
+      properties:
+        buildingId:
+          type: string
+        buildingName:
+          type: string
+        wheelchairAccess:
+          type: boolean
+        accessibleEntrances:
+          type: array
+          items:
+            type: string
+        elevators:
+          type: boolean
+        accessibleRestrooms:
+          type: boolean
+        assistiveListeningDevices:
+          type: boolean
+        signLanguageInterpretation:
+          type: string
+        accessibilityContactPhone:
+          type: string
+        notes:
+          type: string
