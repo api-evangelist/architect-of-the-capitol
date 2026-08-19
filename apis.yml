@@ -25,7 +25,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/apis.yml
 created: '2024-11-21'
 modified: '2026-04-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: architect-of-the-capitol:architect-of-the-capitol-accessibility-api
   name: Architect of the Capitol Accessibility API
