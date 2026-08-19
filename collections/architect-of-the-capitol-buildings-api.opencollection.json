@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Architect of the Capitol Data Accessibility Buildings API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Buildings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Capitol campus buildings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aoc.gov/v1/buildings",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Capitol campus buildings"
+        },
+        {
+          "info": {
+            "name": "Get building details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aoc.gov/v1/buildings/:buildingId",
+            "params": [
+              {
+                "name": "buildingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get building details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "cf3c2921-9a36-4356-8e5a-c6d518ae8dbd",
+      "name": "Accessibility",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7958d561-05e5-46b1-8332-e0d8de9fd094",
+          "name": "Get accessibility information",
+          "request": {
+            "name": "Get accessibility information",
+            "description": {},
+            "url": {
+              "path": [
+                "accessibility"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "buildingId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6d2af74e-2545-49d6-b8ef-c46a6d9b93ef",
+              "name": "Accessibility features for Capitol campus",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessibility"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "buildingId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"buildingId\": \"string\",\n  \"buildingName\": \"string\",\n  \"wheelchairAccess\": true,\n  \"accessibleEntrances\": [\n    \"string\",\n    \"string\"\n  ],\n  \"elevators\": true,\n  \"accessibleRestrooms\": false,\n  \"assistiveListeningDevices\": false,\n  \"signLanguageInterpretation\": \"string\",\n  \"accessibilityContactPhone\": \"string\",\n  \"notes\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.aoc.gov/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bba8428d-6e90-4a94-aaad-bf5826429aec",
+    "name": "Architect of the Capitol Data Accessibility API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API providing access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities.\n\nContact Support:\n Name: Architect of the Capitol",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Architect of the Capitol Data Accessibility Preservation API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Preservation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List historic preservation projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aoc.gov/v1/preservation-projects",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "buildingId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List historic preservation projects"
+        },
+        {
+          "info": {
+            "name": "Get preservation project details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aoc.gov/v1/preservation-projects/:projectId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get preservation project details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

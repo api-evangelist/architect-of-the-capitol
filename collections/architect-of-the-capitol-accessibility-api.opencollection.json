@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Architect of the Capitol Data Accessibility API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accessibility",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get accessibility information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aoc.gov/v1/accessibility",
+            "params": [
+              {
+                "name": "buildingId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get accessibility information"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

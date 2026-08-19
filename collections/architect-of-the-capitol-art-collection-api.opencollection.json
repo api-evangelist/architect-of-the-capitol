@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Architect of the Capitol Data Accessibility Art Collection API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Art Collection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Capitol art collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aoc.gov/v1/artworks",
+            "params": [
+              {
+                "name": "medium",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Capitol art collection"
+        },
+        {
+          "info": {
+            "name": "Get artwork details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aoc.gov/v1/artworks/:artworkId",
+            "params": [
+              {
+                "name": "artworkId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get artwork details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
