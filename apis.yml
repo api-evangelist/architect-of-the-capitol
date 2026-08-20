@@ -17,6 +17,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/architect-of-the-capitol.png
 tags:
+  - Federal-Government
+  - Capitol Hill
+  - Congress
+  - Historic Preservation
+  - Government Services
+tags_raw:
   - Federal Government
   - Capitol Hill
   - Congress
