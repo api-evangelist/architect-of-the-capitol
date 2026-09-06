@@ -41,7 +41,7 @@ tags_raw:
   - Government Services
 url: https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/apis.yml
 created: '2024-11-21'
-modified: '2026-04-19'
+modified: '2026-09-06'
 specificationVersion: '0.23'
 apis:
 - aid: architect-of-the-capitol:architect-of-the-capitol-accessibility-api
@@ -112,6 +112,8 @@ apis:
   - type: GettingStarted
     url: https://www.aoc.gov/about-us
 common:
+  - type: Website
+    url: https://www.aoc.gov/
   - type: AgenticAccess
     url: agentic-access/architect-of-the-capitol-agentic-access.yml
   - type: DomainSecurity
@@ -152,6 +154,67 @@ common:
       description: Support congressional staff with facilities management and space planning information.
   - type: Blog
     url: https://www.aoc.gov/explore-capitol-campus/blog
+  - type: PrivacyPolicy
+    url: https://www.aoc.gov/privacy-statement
+  - type: TermsOfService
+    url: https://www.aoc.gov/image-terms
+  - type: Support
+    url: https://www.aoc.gov/contact
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+
+x-contract-verification:
+  checked: '2026-09-06'
+  method: probed
+  finding: >-
+    The OpenAPI definitions held in this repository (openapi/_original/aoc-data-api.yaml and the
+    five refined per-tag documents derived from it) were NOT harvested from the Architect of the
+    Capitol. Every one declares servers[0].url https://api.aoc.gov/v1, and api.aoc.gov returns
+    NXDOMAIN — no A record, no CNAME, no NS delegation — so the host has never existed. No
+    /openapi.json, /swagger.json, /api-docs, GraphQL, MCP or AsyncAPI surface was found on any
+    aoc.gov host either. These specs are unmarked scaffolds from an earlier bulk sweep and nothing
+    in this enrichment pass was derived from them.
+  evidence:
+  - check: dig api.aoc.gov
+    result: NXDOMAIN
+  - url: https://api.aoc.gov/openapi.json
+    status: 0
+    note: connection failed, host does not resolve
+  - url: https://www.aoc.gov/developers
+    status: 404
+  - url: https://www.aoc.gov/api
+    status: 404
+  - url: https://www.aoc.gov/.well-known/api-catalog
+    status: 404
+  related: The only machine-readable surface bearing the AOC name is the "Architect of the Capitol"
+    jurisdiction boundary layer on catalog.data.gov, which is served from maps2.dcgis.dc.gov and
+    opendata.dc.gov and is published by DC GIS (District of Columbia OCTO), not by the Architect of
+    the Capitol. It fails the ownership check and was deliberately not saved as an AOC contract.
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    The Architect of the Capitol is a legislative-branch construction and preservation agency with
+    no developer program at all — www.aoc.gov/developers and /api both return 404, there is no
+    pricing, portal or reference page anywhere in its 1,092-URL sitemap, and api.aoc.gov (the host
+    named in the scaffolded OpenAPIs this repo holds) does not resolve in DNS.
+  evidence:
+  - url: https://www.aoc.gov/developers
+    status: 404
+  - url: https://www.aoc.gov/api
+    status: 404
+  - url: https://www.aoc.gov/.well-known/api-catalog
+    status: 404
+  - url: https://www.aoc.gov/llms.txt
+    status: 404
+  - url: https://api.aoc.gov/openapi.json
+    status: 0
+  checked: '2026-09-06'
+
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v3

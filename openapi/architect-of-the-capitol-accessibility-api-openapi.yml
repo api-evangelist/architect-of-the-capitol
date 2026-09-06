@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Architect of the Capitol Data Accessibility API
   description: API providing access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities.

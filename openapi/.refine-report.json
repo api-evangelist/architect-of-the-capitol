@@ -17,6 +17,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "architect-of-the-capitol-accessibility-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "architect-of-the-capitol-art-collection-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "architect-of-the-capitol-buildings-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "architect-of-the-capitol-preservation-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "architect-of-the-capitol-visitor-information-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

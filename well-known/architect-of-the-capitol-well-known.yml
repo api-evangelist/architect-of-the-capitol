@@ -1,0 +1,80 @@
+generated: '2026-09-06'
+method: probed
+source: live HTTP probes of every host this record knows (aoc.gov, www.aoc.gov, api.aoc.gov)
+provider: Architect of the Capitol
+providerId: architect-of-the-capitol
+description: >-
+  Recorded absence. Every named /.well-known/ path was probed on the Architect of the Capitol's
+  registrable domain and its www host on 2026-09-06 and every one returned HTTP 404 with an HTML
+  body (the aoc.gov Drupal 404 page) — no document was served. The API host named in this repo's
+  OpenAPI servers[] block, api.aoc.gov, does not resolve at all (NXDOMAIN), so no path on it could
+  be probed. NO WellKnown or SecurityTxt pointer is wired in apis.yml, because nothing was served.
+hosts:
+- host: aoc.gov
+  note: registrable domain; 404 body is the site's HTML error page, not a document
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+- host: www.aoc.gov
+  note: canonical public website host
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+- host: api.aoc.gov
+  note: >-
+    Host named in servers[] of every OpenAPI held in this repo. DNS lookup returns NXDOMAIN
+    (no A, no CNAME, no NS) as of 2026-09-06, so no HTTP probe was possible.
+  documents: []
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
