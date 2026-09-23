@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Architect of the Capitol Data Accessibility Buildings API
+  title: Architect of the Capitol Data Buildings API
   description: API providing access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities.
   version: 1.0.0
   contact:
@@ -70,6 +70,26 @@ paths:
           description: Building not found
 components:
   schemas:
+    BuildingList:
+      type: object
+      properties:
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        buildings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Building'
+    Coordinates:
+      type: object
+      properties:
+        latitude:
+          type: number
+        longitude:
+          type: number
     Building:
       type: object
       properties:
@@ -97,23 +117,3 @@ components:
           type: string
         coordinates:
           $ref: '#/components/schemas/Coordinates'
-    Coordinates:
-      type: object
-      properties:
-        latitude:
-          type: number
-        longitude:
-          type: number
-    BuildingList:
-      type: object
-      properties:
-        total:
-          type: integer
-        offset:
-          type: integer
-        limit:
-          type: integer
-        buildings:
-          type: array
-          items:
-            $ref: '#/components/schemas/Building'

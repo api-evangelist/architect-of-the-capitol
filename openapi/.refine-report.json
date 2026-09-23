@@ -1,11 +1,7 @@
 {
   "provider": "architect-of-the-capitol",
   "sources": [
-    "architect-of-the-capitol-accessibility-api-openapi.yml",
-    "architect-of-the-capitol-art-collection-api-openapi.yml",
-    "architect-of-the-capitol-buildings-api-openapi.yml",
-    "architect-of-the-capitol-preservation-api-openapi.yml",
-    "architect-of-the-capitol-visitor-information-api-openapi.yml"
+    "_original/aoc-data-api.yaml"
   ],
   "outputs": [
     "architect-of-the-capitol-accessibility-api-openapi.yml",
@@ -18,12 +14,20 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "architect-of-the-capitol-accessibility-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "architect-of-the-capitol-art-collection-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "architect-of-the-capitol-buildings-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "architect-of-the-capitol-preservation-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "architect-of-the-capitol-visitor-information-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "aoc-data-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "aoc-data-api.yaml: declared missing tag: Accessibility",
+    "aoc-data-api.yaml: declared missing tag: Art Collection",
+    "aoc-data-api.yaml: declared missing tag: Buildings",
+    "aoc-data-api.yaml: declared missing tag: Preservation",
+    "aoc-data-api.yaml: declared missing tag: Visitor Information",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "architect-of-the-capitol-accessibility-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "architect-of-the-capitol-art-collection-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "architect-of-the-capitol-buildings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "architect-of-the-capitol-preservation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "architect-of-the-capitol-visitor-information-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
