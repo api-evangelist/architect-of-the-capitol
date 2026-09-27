@@ -28,7 +28,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/architect-of-the-capitol.png
 tags:
-  - Federal-Government
+  - Federal Government
   - Capitol Hill
   - Congress
   - Historic Preservation
@@ -39,6 +39,7 @@ tags_raw:
   - Congress
   - Historic Preservation
   - Government Services
+  - Federal-Government
 url: https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/apis.yml
 created: '2024-11-21'
 modified: '2026-09-06'
