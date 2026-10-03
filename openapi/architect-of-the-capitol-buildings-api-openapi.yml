@@ -70,6 +70,13 @@ paths:
           description: Building not found
 components:
   schemas:
+    Coordinates:
+      type: object
+      properties:
+        latitude:
+          type: number
+        longitude:
+          type: number
     Building:
       type: object
       properties:
@@ -97,13 +104,6 @@ components:
           type: string
         coordinates:
           $ref: '#/components/schemas/Coordinates'
-    Coordinates:
-      type: object
-      properties:
-        latitude:
-          type: number
-        longitude:
-          type: number
     BuildingList:
       type: object
       properties:

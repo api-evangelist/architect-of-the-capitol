@@ -71,19 +71,6 @@ paths:
           description: Artwork not found
 components:
   schemas:
-    ArtworkList:
-      type: object
-      properties:
-        total:
-          type: integer
-        offset:
-          type: integer
-        limit:
-          type: integer
-        artworks:
-          type: array
-          items:
-            $ref: '#/components/schemas/Artwork'
     Artwork:
       type: object
       properties:
@@ -111,3 +98,16 @@ components:
           type: string
         historicalSignificance:
           type: string
+    ArtworkList:
+      type: object
+      properties:
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        artworks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Artwork'
