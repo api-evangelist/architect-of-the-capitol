@@ -113,6 +113,12 @@ apis:
   - type: GettingStarted
     url: https://www.aoc.gov/about-us
 common:
+  - type: Plans
+    url: plans/architect-of-the-capitol-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/architect-of-the-capitol-rate-limits.yml
+  - type: FinOps
+    url: finops/architect-of-the-capitol-finops.yml
   - type: Website
     url: https://www.aoc.gov/
   - type: AgenticAccess
