@@ -2,21 +2,21 @@
   "repo": "architect-of-the-capitol",
   "feeds": [
     {
-      "source": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-ld/aoc-data-api-context.jsonld",
-      "feed_url": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-ld/aoc-data-api-context.jsonld",
-      "title": "",
-      "saved": 0,
-      "method": "none"
-    },
-    {
       "source": "https://www.aoc.gov/explore-capitol-campus/blog",
       "feed_url": "https://www.aoc.gov/explore-capitol-campus/blog",
       "title": "",
       "saved": 0,
       "method": "none"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-ld/aoc-data-api-context.jsonld",
+      "feed_url": "https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/json-ld/aoc-data-api-context.jsonld",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "post_count": 4,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
