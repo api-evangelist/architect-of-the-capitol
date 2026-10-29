@@ -66,37 +66,186 @@
 
 The Architect of the Capitol (AOC) serves Congress and the Supreme Court as builder and steward of Capitol Hill's landmark buildings and grounds, preserving historic structures, monuments, art, and gardens across the Capitol campus.
 
-**URL:** https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/apis.yml
+**Areas:** Federal Government · Capitol Hill · Congress · Historic Preservation · Government Services
 
-## Tags
+## Architect of the Capitol on APIs.io
 
-- Federal Government
-- Capitol Hill
-- Congress
-- Historic Preservation
-- Government Services
+Everything profiled for Architect of the Capitol is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/architect-of-the-capitol/](https://apis.io/providers/architect-of-the-capitol/)** — or go straight to one of the APIs or properties below.
 
-## APIs
+### APIs (5)
 
-### Architect of the Capitol Data API
+- [Architect of the Capitol Accessibility API](https://apis.io/apis/architect-of-the-capitol/architect-of-the-capitol-accessibility-api/) — The Accessibility API from Architect of the Capitol — 1 operation(s) for accessibility.
+- [Architect of the Capitol Art Collection API](https://apis.io/apis/architect-of-the-capitol/architect-of-the-capitol-art-collection-api/) — The Art Collection API from Architect of the Capitol — 2 operation(s) for art collection.
+- [Architect of the Capitol Buildings API](https://apis.io/apis/architect-of-the-capitol/architect-of-the-capitol-buildings-api/) — The Buildings API from Architect of the Capitol — 2 operation(s) for buildings.
+- [Architect of the Capitol Preservation API](https://apis.io/apis/architect-of-the-capitol/architect-of-the-capitol-preservation-api/) — The Preservation API from Architect of the Capitol — 2 operation(s) for preservation.
+- [Architect of the Capitol Visitor Information API](https://apis.io/apis/architect-of-the-capitol/architect-of-the-capitol-visitor-information-api/) — The Visitor Information API from Architect of the Capitol — 1 operation(s) for visitor information.
 
-API providing access to public information about Capitol campus buildings, art collections, historic preservation projects, and congressional facilities.
+### Published properties
 
-- **Documentation:** https://www.aoc.gov/
-- **OpenAPI:** https://raw.githubusercontent.com/api-evangelist/architect-of-the-capitol/refs/heads/main/openapi/aoc-data-api.yaml
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Resources
+#### Agentic access (1)
 
-- [Portal](https://www.aoc.gov/)
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Architect Of The Capitol Agentic Access](https://apis.io/agentic-access/architect-of-the-capitol/architect-of-the-capitol-agentic-access/)
+
+#### JSON Schema (9)
+
+The data models the API reads and writes.
+
+- [AccessibilityInfo](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-accessibility-info/)
+- [Artwork](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-artwork/)
+- [ArtworkList](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-artwork-list/)
+- [Building](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-building/)
+- [BuildingList](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-building-list/)
+- [Coordinates](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-coordinates/)
+- [PreservationProject](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-preservation-project/)
+- [PreservationProjectList](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-preservation-project-list/)
+- [VisitorInfo](https://apis.io/schemas/architect-of-the-capitol/aoc-data-api-visitor-info/)
+
+#### JSON Structure (9)
+
+Data models expressed in JSON Structure.
+
+- [Aoc Data Api Accessibility Info Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-accessibility-info-structure/)
+- [Aoc Data Api Artwork List Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-artwork-list-structure/)
+- [Aoc Data Api Artwork Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-artwork-structure/)
+- [Aoc Data Api Building List Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-building-list-structure/)
+- [Aoc Data Api Building Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-building-structure/)
+- [Aoc Data Api Coordinates Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-coordinates-structure/)
+- [Aoc Data Api Preservation Project List Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-preservation-project-list-structure/)
+- [Aoc Data Api Preservation Project Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-preservation-project-structure/)
+- [Aoc Data Api Visitor Info Structure](https://apis.io/json-structure/architect-of-the-capitol/aoc-data-api-visitor-info-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Aoc Data Api Context](https://apis.io/jsonld/architect-of-the-capitol/aoc-data-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Architect of the Capitol Vocabulary](https://apis.io/vocabularies/architect-of-the-capitol/aoc-vocabulary/)
+
+#### Examples (9)
+
+Example requests and responses.
+
+- [Aoc Data Api Accessibility Info Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-accessibility-info-example/)
+- [Aoc Data Api Artwork Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-artwork-example/)
+- [Aoc Data Api Artwork List Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-artwork-list-example/)
+- [Aoc Data Api Building Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-building-example/)
+- [Aoc Data Api Building List Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-building-list-example/)
+- [Aoc Data Api Coordinates Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-coordinates-example/)
+- [Aoc Data Api Preservation Project Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-preservation-project-example/)
+- [Aoc Data Api Preservation Project List Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-preservation-project-list-example/)
+- [Aoc Data Api Visitor Info Example](https://apis.io/examples/architect-of-the-capitol/aoc-data-api-visitor-info-example/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Architect of the Capitol Data Accessibility API](https://apis.io/collections/architect-of-the-capitol/open-architect-of-the-capitol-accessibility-api/)
+- [Architect of the Capitol Data Accessibility Art Collection API](https://apis.io/collections/architect-of-the-capitol/open-architect-of-the-capitol-art-collection-api/)
+- [Architect of the Capitol Data Accessibility Buildings API](https://apis.io/collections/architect-of-the-capitol/open-architect-of-the-capitol-buildings-api/)
+- [Architect of the Capitol Data Accessibility Preservation API](https://apis.io/collections/architect-of-the-capitol/open-architect-of-the-capitol-preservation-api/)
+- [Architect of the Capitol Data Accessibility Visitor Information API](https://apis.io/collections/architect-of-the-capitol/open-architect-of-the-capitol-visitor-information-api/)
+
+#### Governance rules (3)
+
+Spectral rulesets for the provider's contracts.
+
+- [Architect of the Capitol — aoc rules](https://apis.io/rules/architect-of-the-capitol/aoc-spectral-rules/)
+- [Architect of the Capitol — jsonschema rules](https://apis.io/rules/architect-of-the-capitol/architect-of-the-capitol-jsonschema-spectral-rules/)
+- [Architect of the Capitol API Rules](https://apis.io/rules/architect-of-the-capitol/architect-of-the-capitol-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Architect Of The Capitol Domain Security](https://apis.io/security/architect-of-the-capitol/architect-of-the-capitol-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Architect Of The Capitol Plans Pricing](https://apis.io/plans/architect-of-the-capitol/architect-of-the-capitol-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Architect Of The Capitol Rate Limits](https://apis.io/rate-limits/architect-of-the-capitol/architect-of-the-capitol-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Architect Of The Capitol Finops](https://apis.io/finops/architect-of-the-capitol/architect-of-the-capitol-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.aoc.gov/)
 - [Documentation](https://www.aoc.gov/)
+- [Support](https://www.aoc.gov/contact)
+- [Blog](https://www.aoc.gov/explore-capitol-campus/blog)
+- [Terms of service](https://www.aoc.gov/image-terms)
+- [Privacy policy](https://www.aoc.gov/privacy-statement)
 
-## Timestamps
+## API Evangelist rating
 
-- **Created:** 2024-11-21
-- **Modified:** 2026-04-19
+**Kin Score 32.4** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 43.2 |
+| Contract governance | 27.3 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 21.1 |
 
-**FN:** Kin Lane
+**Agent readiness 20.0** — agent-aware
 
-**Email:** kin@apievangelist.com
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.6** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/architect-of-the-capitol/](https://apis.io/providers/architect-of-the-capitol/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Architect of the Capitol: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/architect-of-the-capitol/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
